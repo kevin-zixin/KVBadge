@@ -15,6 +15,7 @@
 		84163CEE1CDC9299001B3944 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84163CEC1CDC9299001B3944 /* LaunchScreen.storyboard */; };
 		84163CF91CDC9299001B3944 /* KVBadgeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84163CF81CDC9299001B3944 /* KVBadgeTests.m */; };
 		84163D041CDC929A001B3944 /* KVBadgeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84163D031CDC929A001B3944 /* KVBadgeUITests.m */; };
+		84163D131CDC9338001B3944 /* UIView+KVBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 84163D121CDC9338001B3944 /* UIView+KVBadge.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		84163CFF1CDC9299001B3944 /* KVBadgeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KVBadgeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84163D031CDC929A001B3944 /* KVBadgeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KVBadgeUITests.m; sourceTree = "<group>"; };
 		84163D051CDC929A001B3944 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84163D111CDC9338001B3944 /* UIView+KVBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+KVBadge.h"; sourceTree = "<group>"; };
+		84163D121CDC9338001B3944 /* UIView+KVBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+KVBadge.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,8 @@
 				84163CE21CDC9299001B3944 /* AppDelegate.m */,
 				84163CE41CDC9299001B3944 /* ViewController.h */,
 				84163CE51CDC9299001B3944 /* ViewController.m */,
+				84163D111CDC9338001B3944 /* UIView+KVBadge.h */,
+				84163D121CDC9338001B3944 /* UIView+KVBadge.m */,
 				84163CE71CDC9299001B3944 /* Main.storyboard */,
 				84163CEA1CDC9299001B3944 /* Assets.xcassets */,
 				84163CEC1CDC9299001B3944 /* LaunchScreen.storyboard */,
@@ -273,6 +278,7 @@
 				84163CE61CDC9299001B3944 /* ViewController.m in Sources */,
 				84163CE31CDC9299001B3944 /* AppDelegate.m in Sources */,
 				84163CE01CDC9299001B3944 /* main.m in Sources */,
+				84163D131CDC9338001B3944 /* UIView+KVBadge.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
