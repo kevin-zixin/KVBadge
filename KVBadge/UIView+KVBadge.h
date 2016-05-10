@@ -12,4 +12,9 @@
 @property(nonatomic,strong)UIButton *badgeButton;
 -(void)showBadgeButtonWithNumber:(NSInteger) num;
 -(void)clearBadge;
+
+
+@property(nonatomic,strong)UIButton *redSpotButton;
+-(void)showRedSpotButtonWithPoint:(CGPoint)point;
+-(void)clearRedSpot;
 @end

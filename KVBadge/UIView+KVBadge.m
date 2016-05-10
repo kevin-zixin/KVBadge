@@ -11,9 +11,10 @@
 
 
 static const char *KVBadgeViewKey = "KVBadgeViewKey";
-
+static const char *KVRedSpotKey = "KVRedSpotKey";
 @implementation UIView (KVBadge)
 
+#pragma mark - badge
 -(void)showBadgeButtonWithNumber:(NSInteger)num{
     [self badgeInit];
     [self.badgeButton setTitle:[NSString stringWithFormat:@"%ld",(long)num] forState:UIControlStateNormal];
@@ -48,8 +49,6 @@ static const char *KVBadgeViewKey = "KVBadgeViewKey";
     }
 }
 
-
-
 -(UIButton*)badgeButton{
     return objc_getAssociatedObject(self, KVBadgeViewKey);
 }
@@ -58,4 +57,33 @@ static const char *KVBadgeViewKey = "KVBadgeViewKey";
 -(void)setBadgeButton:(UIButton *)badgeButton{
     objc_setAssociatedObject(self, KVBadgeViewKey, badgeButton, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
+
+#pragma mark - redSpot
+-(void)showRedSpotButtonWithPoint:(CGPoint)point{
+    [self redSpotInitWithPoint:point];
+    self.redSpotButton.backgroundColor = [UIColor redColor];
+    self.redSpotButton.hidden = NO;
+}
+
+-(void)clearRedSpot{
+    self.redSpotButton.hidden = YES;
+}
+-(void)redSpotInitWithPoint:(CGPoint)point{
+    if (nil==self.redSpotButton) {
+        CGFloat buttonWith = 3;
+        CGRect frm = CGRectMake(point.x, point.y, buttonWith, buttonWith);
+        self.redSpotButton = [[UIButton alloc]initWithFrame:frm];
+        [self addSubview:self.redSpotButton];
+        [self bringSubviewToFront:self.redSpotButton];
+    }
+}
+
+-(UIButton*)redSpotButton{
+    return objc_getAssociatedObject(self, KVRedSpotKey);
+}
+
+-(void)setRedSpotButton:(UIButton *)redSpotButton{
+    objc_setAssociatedObject(self, KVRedSpotKey, redSpotButton, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
 @end

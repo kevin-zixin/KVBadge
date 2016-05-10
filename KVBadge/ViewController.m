@@ -36,8 +36,13 @@
     
     
     UIButton *clearButton = [[UIButton alloc]initWithFrame:CGRectMake(100, 300, 100, 40)];
-    [clearButton addTarget:self action:@selector(clearButtonClicked) forControlEvents:UIControlEventTouchUpInside];
+    [clearButton addTarget:self action:@selector(clearButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     clearButton.backgroundColor =[UIColor greenColor];
+    [clearButton setTitle:@"abcd" forState:UIControlStateNormal];
+    [clearButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [clearButton.titleLabel sizeToFit];
+    [clearButton showRedSpotButtonWithPoint:CGPointMake(clearButton.titleLabel.frame.size.width+clearButton.titleLabel.frame.origin.x, clearButton.frame.size.height/2)];
+    NSLog(@"%f \n%f",clearButton.titleLabel.frame.size.width,clearButton.titleLabel.frame.size.height);
     [self.view addSubview:clearButton];
     
 }
@@ -50,8 +55,9 @@
     }
 }
 
--(void)clearButtonClicked{
+-(void)clearButtonClicked:(UIButton*)button{
     [_testview clearBadge];
+    [button clearRedSpot];
 }
 
 - (void)didReceiveMemoryWarning {
