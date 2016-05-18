@@ -15,6 +15,6 @@
 
 
 @property(nonatomic,strong)UIButton *redSpotButton;
--(void)showRedSpotButtonWithPoint:(CGPoint)point;
+-(void)showRedSpotButtonWithPoint:(CGPoint)point setValue:(NSInteger)num;
 -(void)clearRedSpot;
 @end

@@ -41,7 +41,7 @@
     [clearButton setTitle:@"abcd" forState:UIControlStateNormal];
     [clearButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [clearButton.titleLabel sizeToFit];
-    [clearButton showRedSpotButtonWithPoint:CGPointMake(clearButton.titleLabel.frame.size.width+clearButton.titleLabel.frame.origin.x, clearButton.frame.size.height/2)];
+    [clearButton showRedSpotButtonWithPoint:CGPointMake(clearButton.titleLabel.frame.size.width+clearButton.titleLabel.frame.origin.x, clearButton.frame.size.height/2) setValue:99];
     NSLog(@"%f \n%f",clearButton.titleLabel.frame.size.width,clearButton.titleLabel.frame.size.height);
     [self.view addSubview:clearButton];
     

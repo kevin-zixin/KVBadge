@@ -59,10 +59,21 @@ static const char *KVRedSpotKey = "KVRedSpotKey";
 }
 
 #pragma mark - redSpot
--(void)showRedSpotButtonWithPoint:(CGPoint)point{
+-(void)showRedSpotButtonWithPoint:(CGPoint)point setValue:(NSInteger)num{
     [self redSpotInitWithPoint:point];
     self.redSpotButton.backgroundColor = [UIColor redColor];
     self.redSpotButton.hidden = NO;
+    self.redSpotButton.titleLabel.font = [UIFont systemFontOfSize:8];
+    [self.redSpotButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    NSString *titleStr;
+    if (num>=99) {
+        titleStr = @"99+";
+    }else{
+        titleStr = [NSString stringWithFormat:@"%ld",(long)num];
+    }
+    
+    [self.redSpotButton setTitle:titleStr forState:UIControlStateNormal];
+    
 }
 
 -(void)clearRedSpot{
@@ -70,9 +81,11 @@ static const char *KVRedSpotKey = "KVRedSpotKey";
 }
 -(void)redSpotInitWithPoint:(CGPoint)point{
     if (nil==self.redSpotButton) {
-        CGFloat buttonWith = 3;
-        CGRect frm = CGRectMake(point.x, point.y, buttonWith, buttonWith);
+        CGFloat buttonWith = 30;
+        CGRect frm = CGRectMake(point.x, point.y-buttonWith/2, buttonWith, buttonWith);
         self.redSpotButton = [[UIButton alloc]initWithFrame:frm];
+        self.redSpotButton.layer.cornerRadius = buttonWith/2;
+        self.redSpotButton.layer.masksToBounds = YES;
         [self addSubview:self.redSpotButton];
         [self bringSubviewToFront:self.redSpotButton];
     }
